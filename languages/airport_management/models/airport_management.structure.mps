@@ -99,6 +99,11 @@
     <property role="EcuMT" value="5462972795239660701" />
     <property role="TrG5h" value="Elevator" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyj" id="4Jgod0HSvOe" role="1TKVEi">
+      <property role="IQ2ns" value="5462972795239660814" />
+      <property role="20kJfa" value="connectedFloors" />
+      <ref role="20lvS9" node="4Jgod0HSvMr" resolve="Floor" />
+    </node>
   </node>
   <node concept="1TIwiD" id="4Jgod0HSvMv">
     <property role="EcuMT" value="5462972795239660703" />
@@ -128,12 +133,12 @@
   <node concept="1TIwiD" id="4Jgod0HSvMI">
     <property role="EcuMT" value="5462972795239660718" />
     <property role="TrG5h" value="DropOff" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" node="4Jgod0HSvM8" resolve="Area" />
   </node>
   <node concept="1TIwiD" id="4Jgod0HSvMK">
     <property role="EcuMT" value="5462972795239660720" />
     <property role="TrG5h" value="Departure" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" node="4Jgod0HSvM8" resolve="Area" />
     <node concept="1TJgyj" id="4Jgod0HSvNL" role="1TKVEi">
       <property role="IQ2ns" value="5462972795239660785" />
       <property role="20kJfa" value="security" />
@@ -153,7 +158,7 @@
   <node concept="1TIwiD" id="4Jgod0HSvMV">
     <property role="EcuMT" value="5462972795239660731" />
     <property role="TrG5h" value="Arrival" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" node="4Jgod0HSvM8" resolve="Area" />
     <node concept="1TJgyj" id="4Jgod0HSvNH" role="1TKVEi">
       <property role="IQ2ns" value="5462972795239660781" />
       <property role="20kJfa" value="baggageClaim" />
@@ -173,12 +178,12 @@
   <node concept="1TIwiD" id="4Jgod0HSvN5">
     <property role="EcuMT" value="5462972795239660741" />
     <property role="TrG5h" value="BaggageClaim" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" node="4Jgod0HSvM8" resolve="Area" />
   </node>
   <node concept="1TIwiD" id="4Jgod0HSvN7">
     <property role="EcuMT" value="5462972795239660743" />
     <property role="TrG5h" value="GateArea" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" node="4Jgod0HSvM8" resolve="Area" />
     <node concept="1TJgyj" id="4Jgod0HSvNV" role="1TKVEi">
       <property role="IQ2ns" value="5462972795239660795" />
       <property role="20kJfa" value="gates" />
