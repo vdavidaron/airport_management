@@ -1,11 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/airport_management/src-gen" creationIcons="false"
-    editDirectory="/airport_management.edit/src-gen" editorDirectory="/airport_management.editor/src-gen"
-    modelPluginID="airport_management" modelName="Airport_management" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="22.0"
-    copyrightFields="false" operationReflection="true" importOrganizing="true">
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/airport_management/src" modelPluginID="airport_management"
+    modelName="Airport_management" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="22.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
   <foreignModel>airport_management.ecore</foreignModel>
-  <testsDirectory xsi:nil="true"/>
-  <genPackages prefix="Airport_management" disposableProviderFactory="true" ecorePackage="airport_management.ecore#/"/>
+  <genPackages prefix="Airport" disposableProviderFactory="true" ecorePackage="airport_management.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="airport_management.ecore#//CommonAreaTypes">
+      <genEnumLiterals ecoreEnumLiteral="airport_management.ecore#//CommonAreaTypes/Sitting"/>
+      <genEnumLiterals ecoreEnumLiteral="airport_management.ecore#//CommonAreaTypes/Dining"/>
+      <genEnumLiterals ecoreEnumLiteral="airport_management.ecore#//CommonAreaTypes/Working"/>
+      <genEnumLiterals ecoreEnumLiteral="airport_management.ecore#//CommonAreaTypes/Playing"/>
+      <genEnumLiterals ecoreEnumLiteral="airport_management.ecore#//CommonAreaTypes/Restroom"/>
+      <genEnumLiterals ecoreEnumLiteral="airport_management.ecore#//CommonAreaTypes/Retail"/>
+      <genEnumLiterals ecoreEnumLiteral="airport_management.ecore#//CommonAreaTypes/Lounge"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="airport_management.ecore#//FlightType">
+      <genEnumLiterals ecoreEnumLiteral="airport_management.ecore#//FlightType/arrival"/>
+      <genEnumLiterals ecoreEnumLiteral="airport_management.ecore#//FlightType/departure"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="airport_management.ecore#//TransportationTypes">
+      <genEnumLiterals ecoreEnumLiteral="airport_management.ecore#//TransportationTypes/Taxi"/>
+      <genEnumLiterals ecoreEnumLiteral="airport_management.ecore#//TransportationTypes/Bus"/>
+      <genEnumLiterals ecoreEnumLiteral="airport_management.ecore#//TransportationTypes/Train"/>
+    </genEnums>
+    <genClasses ecoreClass="airport_management.ecore#//Terminal">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference airport_management.ecore#//Terminal/dropoff"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference airport_management.ecore#//Terminal/floors"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference airport_management.ecore#//Terminal/airside"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference airport_management.ecore#//Terminal/landside"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference airport_management.ecore#//Terminal/flights"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference airport_management.ecore#//Terminal/ParkingAreas"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference airport_management.ecore#//Terminal/TransportationServices"/>
+    </genClasses>
+    <genClasses ecoreClass="airport_management.ecore#//Airside">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference airport_management.ecore#//Airside/gateArea"/>
+    </genClasses>
+    <genClasses ecoreClass="airport_management.ecore#//Belt">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference airport_management.ecore#//Belt/flight"/>
+    </genClasses>
+    <genClasses ecoreClass="airport_management.ecore#//CheckIn">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference airport_management.ecore#//CheckIn/counters"/>
+    </genClasses>
+    <genClasses ecoreClass="airport_management.ecore#//CommonArea">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute airport_management.ecore#//CommonArea/type"/>
+    </genClasses>
+    <genClasses ecoreClass="airport_management.ecore#//Counter">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference airport_management.ecore#//Counter/flight"/>
+    </genClasses>
+    <genClasses ecoreClass="airport_management.ecore#//Customs"/>
+    <genClasses image="false" ecoreClass="airport_management.ecore#//Division">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference airport_management.ecore#//Division/commonAreas"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference airport_management.ecore#//Division/floor"/>
+    </genClasses>
+    <genClasses ecoreClass="airport_management.ecore#//Elevator">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference airport_management.ecore#//Elevator/connectedFloors"/>
+    </genClasses>
+    <genClasses ecoreClass="airport_management.ecore#//Flight">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute airport_management.ecore#//Flight/flightNumber"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute airport_management.ecore#//Flight/time"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute airport_management.ecore#//Flight/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute airport_management.ecore#//Flight/city"/>
+    </genClasses>
+    <genClasses ecoreClass="airport_management.ecore#//Floor"/>
+    <genClasses ecoreClass="airport_management.ecore#//Gate">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute airport_management.ecore#//Gate/boarding"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference airport_management.ecore#//Gate/flight"/>
+    </genClasses>
+    <genClasses ecoreClass="airport_management.ecore#//Landside">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference airport_management.ecore#//Landside/departureArea"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference airport_management.ecore#//Landside/arrivalArea"/>
+    </genClasses>
+    <genClasses ecoreClass="airport_management.ecore#//Point">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute airport_management.ecore#//Point/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute airport_management.ecore#//Point/y"/>
+    </genClasses>
+    <genClasses ecoreClass="airport_management.ecore#//SecurityCheck"/>
+    <nestedGenPackages prefix="Areas" disposableProviderFactory="true" ecorePackage="airport_management.ecore#//areas">
+      <genClasses image="false" ecoreClass="airport_management.ecore#//areas/Area">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference airport_management.ecore#//areas/Area/areaCorners"/>
+      </genClasses>
+      <genClasses ecoreClass="airport_management.ecore#//areas/Arrival">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference airport_management.ecore#//areas/Arrival/baggageClaim"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference airport_management.ecore#//areas/Arrival/customs"/>
+      </genClasses>
+      <genClasses ecoreClass="airport_management.ecore#//areas/BaggageClaim">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference airport_management.ecore#//areas/BaggageClaim/belts"/>
+      </genClasses>
+      <genClasses ecoreClass="airport_management.ecore#//areas/BaggageDropOff">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference airport_management.ecore#//areas/BaggageDropOff/counters"/>
+      </genClasses>
+      <genClasses ecoreClass="airport_management.ecore#//areas/Departure">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference airport_management.ecore#//areas/Departure/security"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference airport_management.ecore#//areas/Departure/checkIn"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference airport_management.ecore#//areas/Departure/baggageDropOff"/>
+      </genClasses>
+      <genClasses ecoreClass="airport_management.ecore#//areas/DropOff"/>
+      <genClasses ecoreClass="airport_management.ecore#//areas/GateArea">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference airport_management.ecore#//areas/GateArea/gates"/>
+      </genClasses>
+      <genClasses ecoreClass="airport_management.ecore#//areas/ParkingArea"/>
+      <genClasses ecoreClass="airport_management.ecore#//areas/TransportationServices">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute airport_management.ecore#//areas/TransportationServices/type"/>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
 </genmodel:GenModel>

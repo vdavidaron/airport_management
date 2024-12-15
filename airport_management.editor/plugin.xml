@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated airport_management -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="airport.presentation.AirportModelWizardID"
+            name="%_UI_AirportModelWizard_label"
+            class="airport.presentation.AirportModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/AirportModelFile.gif">
+         <description>%_UI_AirportModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated airport_management -->
+      <editor
+            id="airport.presentation.AirportEditorID"
+            name="%_UI_AirportEditor_label"
+            icon="icons/full/obj16/AirportModelFile.gif"
+            extensions="airport"
+            class="airport.presentation.AirportEditor"
+            contributorClass="airport.presentation.AirportActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated airport_management -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="airport.areas.presentation.AreasModelWizardID"
+            name="%_UI_AreasModelWizard_label"
+            class="airport.areas.presentation.AreasModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/AreasModelFile.gif">
+         <description>%_UI_AreasModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated airport_management -->
+      <editor
+            id="airport.areas.presentation.AreasEditorID"
+            name="%_UI_AreasEditor_label"
+            icon="icons/full/obj16/AreasModelFile.gif"
+            extensions="areas"
+            class="airport.areas.presentation.AreasEditor"
+            contributorClass="airport.areas.presentation.AreasActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
