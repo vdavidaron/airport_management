@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/airport_management/src-gen" creationIcons="false"
+    editDirectory="/airport_management.edit/src-gen" editorDirectory="/airport_management.editor/src-gen"
+    modelPluginID="airport_management" modelName="Airport_management" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="22.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>airport_management.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Airport_management" disposableProviderFactory="true" ecorePackage="airport_management.ecore#/"/>
+</genmodel:GenModel>
