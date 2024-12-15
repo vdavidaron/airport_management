@@ -1,11 +1,12 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Airport_management_plugin
-Bundle-SymbolicName: airport_management_plugin
+Bundle-SymbolicName: airport_management_plugin;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: airport_management_plugin.Activator
 Require-Bundle: org.eclipse.ui,
- org.eclipse.core.runtime
+ org.eclipse.core.runtime,
+ airport_management;bundle-version="0.1.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-23
 Automatic-Module-Name: airport.management.plugin
 Bundle-ActivationPolicy: lazy
