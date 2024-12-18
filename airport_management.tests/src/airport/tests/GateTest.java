@@ -5,8 +5,6 @@ package airport.tests;
 import airport.AirportFactory;
 import airport.Gate;
 
-import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
 
 /**
@@ -15,15 +13,7 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class GateTest extends TestCase {
-
-	/**
-	 * The fixture for this Gate test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected Gate fixture = null;
+public class GateTest extends namedElementTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -45,23 +35,14 @@ public class GateTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Gate test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(Gate fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Gate test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected Gate getFixture() {
-		return fixture;
+		return (Gate)fixture;
 	}
 
 	/**

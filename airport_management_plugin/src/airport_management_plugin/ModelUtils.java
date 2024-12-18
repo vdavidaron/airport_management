@@ -13,69 +13,47 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
-
-import EntityRelationship.Attribute;
-import EntityRelationship.DataBase;
-import EntityRelationship.Entity;
-import EntityRelationship.EntityRelationshipFactory;
-import EntityRelationship.EntityRelationshipPackage;
+import airport.AirportFactory;
+import airport.AirportPackage;
 import airport.Terminal;
 
 public class ModelUtils {
 	public static Terminal create() {
-		DataBase db = EntityRelationshipFactory.eINSTANCE.createDataBase();
-		db.setName("Commerce");
-		Entity entity1 = EntityRelationshipFactory.eINSTANCE.createEntity();
-		entity1.setName("Client");
+		Terminal tm = AirportFactory.eINSTANCE.createTerminal();
 		
-		Entity entity2 = EntityRelationshipFactory.eINSTANCE.createEntity();
-		entity2.setName("Product");
-		
-
-		Attribute m1 = EntityRelationshipFactory.eINSTANCE.createAttribute();
-		m1.setName("productName");
-		Attribute m2 = EntityRelationshipFactory.eINSTANCE.createAttribute();
-		m2.setName("clientName");
-		
-		entity1.getAttributes().add(m1);
-		entity2.getAttributes().add(m2);
-		db.getEntities().add(entity1);
-		db.getEntities().add(entity2);
-		return db;
+		return tm;
 	}
 
 	public final static String FILENAME = "testLiveMDE.xmi";
 
-	public static Diagnostic validate(DataBase wm) {
+	public static Diagnostic validate(Terminal wm) {
 		return Diagnostician.INSTANCE.validate(wm);
 	}
 
 	public static void main(String[] args) {
-		DataBase app = create();
+		Terminal app = create();
 		serializeModel(app, FILENAME);
-		DataBase libl = load(FILENAME);
+		Terminal libl = load(FILENAME);
 
 		Diagnostic d = validate(libl);
 		if (d.getSeverity() != Diagnostic.ERROR)
 			System.out.println("the model is valid");
 		else
 			System.out.println("The model is not invalid");
-		System.out.println(app.getEntities().size());
-		app.getEntities().forEach(z -> System.out.println(z.getName()));
 	}
 
-	public static DataBase load(String fileName) {
-		EPackage.Registry.INSTANCE.put(EntityRelationshipPackage.eNS_URI, EntityRelationshipPackage.eINSTANCE);
+	public static Terminal load(String fileName) {
+		EPackage.Registry.INSTANCE.put(AirportPackage.eNS_URI, AirportPackage.eINSTANCE);
 		ResourceSet resSet = new ResourceSetImpl();
 		Resource resource = resSet.getResource(URI.createFileURI(fileName), true);
 		// Get the first model element and cast it to the right type, in my
 		// example everything is hierarchical included in this first node
-		DataBase myWeb = (DataBase) resource.getContents().get(0);
+		Terminal myWeb = (Terminal) resource.getContents().get(0);
 		System.out.println(myWeb);
 		return myWeb;
 	}
 
-	public static void serializeModel(DataBase wm, String fileName) {
+	public static void serializeModel(Terminal wm, String fileName) {
 		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
 		Map<String, Object> m = reg.getExtensionToFactoryMap();
 		m.put("xmi", new XMIResourceFactoryImpl());
