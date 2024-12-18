@@ -15,11 +15,35 @@ import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import airport.AirportFactory;
 import airport.AirportPackage;
+import airport.Airside;
+import airport.Flight;
+import airport.FlightType;
+import airport.Gate;
+import airport.GateArea;
+import airport.Landside;
 import airport.Terminal;
 
 public class ModelUtils {
 	public static Terminal create() {
 		Terminal tm = AirportFactory.eINSTANCE.createTerminal();
+		Airside as = AirportFactory.eINSTANCE.createAirside();
+		Landside ls = AirportFactory.eINSTANCE.createLandside();
+		GateArea ga = AirportFactory.eINSTANCE.createGateArea();
+		Gate gate = AirportFactory.eINSTANCE.createGate();
+		Flight flight = AirportFactory.eINSTANCE.createFlight();
+
+		flight.setCity("ABC");
+		flight.setFlightNumber("FR1234");
+		flight.setTime("12:00:00");
+		flight.setType(FlightType.DEPARTURE);
+		
+		tm.getAirside().add(as);
+		tm.getLandside().add(ls);
+		tm.getFlights().add(flight);
+		as.getGateArea().add(ga);
+		ga.getGates().add(gate);
+		gate.setFlight(flight);
+		gate.setBoarding(false);
 		
 		return tm;
 	}
