@@ -4,8 +4,6 @@ package airport;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Elevator</b></em>'.
@@ -22,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Elevator extends EObject {
+public interface Elevator extends namedElement {
 	/**
 	 * Returns the value of the '<em><b>Connected Floors</b></em>' containment reference list.
 	 * The list contents are of type {@link airport.Floor}.

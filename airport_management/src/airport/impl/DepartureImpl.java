@@ -8,8 +8,10 @@ import airport.CheckIn;
 import airport.Departure;
 import airport.SecurityCheck;
 
+import airport.namedElement;
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -17,6 +19,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -28,6 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link airport.impl.DepartureImpl#getName <em>Name</em>}</li>
  *   <li>{@link airport.impl.DepartureImpl#getSecurity <em>Security</em>}</li>
  *   <li>{@link airport.impl.DepartureImpl#getCheckIn <em>Check In</em>}</li>
  *   <li>{@link airport.impl.DepartureImpl#getBaggageDropOff <em>Baggage Drop Off</em>}</li>
@@ -36,6 +40,26 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class DepartureImpl extends AreaImpl implements Departure {
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getSecurity() <em>Security</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -83,6 +107,29 @@ public class DepartureImpl extends AreaImpl implements Departure {
 	@Override
 	protected EClass eStaticClass() {
 		return AirportPackage.Literals.DEPARTURE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AirportPackage.DEPARTURE__NAME, oldName, name));
 	}
 
 	/**
@@ -150,6 +197,8 @@ public class DepartureImpl extends AreaImpl implements Departure {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case AirportPackage.DEPARTURE__NAME:
+				return getName();
 			case AirportPackage.DEPARTURE__SECURITY:
 				return getSecurity();
 			case AirportPackage.DEPARTURE__CHECK_IN:
@@ -169,6 +218,9 @@ public class DepartureImpl extends AreaImpl implements Departure {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case AirportPackage.DEPARTURE__NAME:
+				setName((String)newValue);
+				return;
 			case AirportPackage.DEPARTURE__SECURITY:
 				getSecurity().clear();
 				getSecurity().addAll((Collection<? extends SecurityCheck>)newValue);
@@ -193,6 +245,9 @@ public class DepartureImpl extends AreaImpl implements Departure {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case AirportPackage.DEPARTURE__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 			case AirportPackage.DEPARTURE__SECURITY:
 				getSecurity().clear();
 				return;
@@ -214,6 +269,8 @@ public class DepartureImpl extends AreaImpl implements Departure {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case AirportPackage.DEPARTURE__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case AirportPackage.DEPARTURE__SECURITY:
 				return security != null && !security.isEmpty();
 			case AirportPackage.DEPARTURE__CHECK_IN:
@@ -222,6 +279,54 @@ public class DepartureImpl extends AreaImpl implements Departure {
 				return baggageDropOff != null && !baggageDropOff.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == namedElement.class) {
+			switch (derivedFeatureID) {
+				case AirportPackage.DEPARTURE__NAME: return AirportPackage.NAMED_ELEMENT__NAME;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == namedElement.class) {
+			switch (baseFeatureID) {
+				case AirportPackage.NAMED_ELEMENT__NAME: return AirportPackage.DEPARTURE__NAME;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(')');
+		return result.toString();
 	}
 
 } //DepartureImpl

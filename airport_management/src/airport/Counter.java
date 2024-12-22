@@ -2,8 +2,6 @@
  */
 package airport;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Counter</b></em>'.
@@ -17,10 +15,11 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see airport.AirportPackage#getCounter()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ValidCounter'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ValidCounter='self.flight = null or self.flight.type = FlightType::departure'"
  * @generated
  */
-public interface Counter extends EObject {
+public interface Counter extends namedElement {
 	/**
 	 * Returns the value of the '<em><b>Flight</b></em>' reference.
 	 * <!-- begin-user-doc -->

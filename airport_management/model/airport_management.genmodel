@@ -61,6 +61,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute airport_management.ecore#//Flight/time"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute airport_management.ecore#//Flight/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute airport_management.ecore#//Flight/city"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute airport_management.ecore#//Flight/isInternational"/>
     </genClasses>
     <genClasses ecoreClass="airport_management.ecore#//Floor"/>
     <genClasses ecoreClass="airport_management.ecore#//Gate">
@@ -97,11 +98,18 @@
     <genClasses ecoreClass="airport_management.ecore#//DropOff"/>
     <genClasses ecoreClass="airport_management.ecore#//GateArea">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference airport_management.ecore#//GateArea/gates"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute airport_management.ecore#//GateArea/totalGates"/>
+      <genOperations ecoreOperation="airport_management.ecore#//GateArea/calculateTotalGates"/>
+      <genOperations ecoreOperation="airport_management.ecore#//GateArea/findGateByName">
+        <genParameters ecoreParameter="airport_management.ecore#//GateArea/findGateByName/name"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="airport_management.ecore#//ParkingArea"/>
     <genClasses ecoreClass="airport_management.ecore#//TransportationServices">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute airport_management.ecore#//TransportationServices/type"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="airport_management.ecore#//namedElement"/>
+    <genClasses image="false" ecoreClass="airport_management.ecore#//namedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute airport_management.ecore#//namedElement/name"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -13,5 +13,5 @@ package airport;
  * @model
  * @generated
  */
-public interface DropOff extends Area {
+public interface DropOff extends Area, namedElement {
 } // DropOff

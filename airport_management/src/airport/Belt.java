@@ -2,8 +2,6 @@
  */
 package airport;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Belt</b></em>'.
@@ -20,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Belt extends EObject {
+public interface Belt extends namedElement {
 	/**
 	 * Returns the value of the '<em><b>Flight</b></em>' reference.
 	 * <!-- begin-user-doc -->

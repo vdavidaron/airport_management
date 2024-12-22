@@ -4,9 +4,6 @@ package airport.tests;
 
 import airport.AirportFactory;
 import airport.Elevator;
-
-import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
 
 /**
@@ -15,15 +12,7 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ElevatorTest extends TestCase {
-
-	/**
-	 * The fixture for this Elevator test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected Elevator fixture = null;
+public class ElevatorTest extends namedElementTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -45,23 +34,14 @@ public class ElevatorTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Elevator test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(Elevator fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Elevator test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected Elevator getFixture() {
-		return fixture;
+		return (Elevator)fixture;
 	}
 
 	/**

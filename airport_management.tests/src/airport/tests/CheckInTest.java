@@ -4,9 +4,6 @@ package airport.tests;
 
 import airport.AirportFactory;
 import airport.CheckIn;
-
-import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
 
 /**
@@ -15,15 +12,7 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class CheckInTest extends TestCase {
-
-	/**
-	 * The fixture for this Check In test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CheckIn fixture = null;
+public class CheckInTest extends namedElementTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -45,23 +34,14 @@ public class CheckInTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Check In test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(CheckIn fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Check In test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected CheckIn getFixture() {
-		return fixture;
+		return (CheckIn)fixture;
 	}
 
 	/**

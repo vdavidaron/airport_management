@@ -15,7 +15,9 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
@@ -46,8 +48,31 @@ public class BaggageDropOffItemProvider extends AreaItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_namedElement_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_namedElement_name_feature", "_UI_namedElement_type"),
+				 AirportPackage.Literals.NAMED_ELEMENT__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -99,7 +124,10 @@ public class BaggageDropOffItemProvider extends AreaItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_BaggageDropOff_type");
+		String label = ((BaggageDropOff)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_BaggageDropOff_type") :
+			getString("_UI_BaggageDropOff_type") + " " + label;
 	}
 
 
@@ -115,6 +143,9 @@ public class BaggageDropOffItemProvider extends AreaItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(BaggageDropOff.class)) {
+			case AirportPackage.BAGGAGE_DROP_OFF__NAME:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 			case AirportPackage.BAGGAGE_DROP_OFF__COUNTERS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;

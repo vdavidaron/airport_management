@@ -1,2 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<am:Terminal xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:am="http://example.org/airport"/>
+<am:Terminal xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:am="http://example.org/airport" name="Terminal 1 Pescara Airport">
+  <dropoff name="Kiss&amp;Leave">
+    <areaCorners y="10"/>
+    <areaCorners y="20"/>
+    <areaCorners x="10" y="10"/>
+    <areaCorners x="10" y="20"/>
+  </dropoff>
+  <floors name="GroundFloor"/>
+  <airside>
+    <commonAreas name="SittingArea"/>
+    <floor name="GroundFloor"/>
+    <gateArea name="Gate Area 1">
+      <areaCorners y="20"/>
+      <areaCorners y="30"/>
+      <areaCorners x="20" y="30"/>
+      <areaCorners x="30" y="20"/>
+      <gates name="Gate 1" boarding="true" flight="//@flights.5"/>
+      <gates name="Gate 2" flight="//@flights.2"/>
+      <gates name="Gate 3"/>
+      <gates name="Gate 4"/>
+      <gates name="Gate 5"/>
+    </gateArea>
+  </airside>
+  <landside>
+    <commonAreas name="Restroom 1" type="Restroom"/>
+    <commonAreas name="Restroom 2" type="Restroom"/>
+    <commonAreas name="Restroom 3" type="Restroom"/>
+    <commonAreas name="Restroom 4" type="Restroom"/>
+    <commonAreas name="Restroom 5" type="Restroom"/>
+    <commonAreas name="DAngelo" type="Dining"/>
+    <commonAreas name="Concorde" type="Dining"/>
+    <commonAreas name="Iannone" type="Retail"/>
+    <commonAreas name="Evangelista" type="Retail"/>
+    <commonAreas name="SittingArea"/>
+    <floor name="GroundFloor"/>
+    <departureArea name="Departure 1">
+      <areaCorners y="20"/>
+      <areaCorners y="30"/>
+      <areaCorners x="20" y="30"/>
+      <areaCorners x="20" y="40"/>
+      <security name="Security"/>
+      <checkIn name="CheckIn">
+        <counters name="1" flight="//@flights.2"/>
+        <counters name="2" flight="//@flights.2"/>
+        <counters name="3"/>
+      </checkIn>
+      <baggageDropOff>
+        <areaCorners y="20"/>
+        <areaCorners y="30"/>
+        <areaCorners x="20" y="30"/>
+        <areaCorners x="20" y="40"/>
+        <counters name="1" flight="//@flights.2"/>
+        <counters name="2" flight="//@flights.2"/>
+        <counters name="3"/>
+        <counters name="4"/>
+      </baggageDropOff>
+    </departureArea>
+    <arrivalArea name="Arrival 1">
+      <areaCorners x="30" y="40"/>
+      <areaCorners x="50" y="50"/>
+      <areaCorners x="30" y="40"/>
+      <areaCorners x="50" y="40"/>
+      <baggageClaim name="BC 1">
+        <areaCorners x="30" y="40"/>
+        <areaCorners x="50" y="40"/>
+        <areaCorners x="30" y="40"/>
+        <areaCorners x="50" y="50"/>
+        <belts name="1" flight="//@flights.4"/>
+        <belts name="2"/>
+        <belts name="3"/>
+        <belts name="4"/>
+      </baggageClaim>
+      <customs name="Customs"/>
+    </arrivalArea>
+  </landside>
+  <flights name="FR2294" flightNumber="FR2294" time="10:30" type="departure" city="Milano"/>
+  <flights name="FR983" flightNumber="FR983" time="10:55" type="departure" city="London"/>
+  <flights name="FR5013" flightNumber="FR5013" time="10:55" type="departure" city="Brussels"/>
+  <flights name="W45086" flightNumber="W45086" time="16:15" type="departure" city="Tirana"/>
+  <flights name="FR982" flightNumber="FR982" time="10:30" city="London"/>
+  <flights name="FR2293" flightNumber="FR2293" time="10:30" city="Milano"/>
+  <flights name="FR5016" flightNumber="FR5016" time="15:25" city="Brussels"/>
+  <flights name="W45085" flightNumber="W45085" time="15:40" city="Tirana"/>
+  <ParkingAreas>
+    <areaCorners y="60"/>
+    <areaCorners/>
+    <areaCorners y="10"/>
+    <areaCorners x="60" y="10"/>
+  </ParkingAreas>
+  <TransportationServices name="Taxi">
+    <areaCorners y="60"/>
+    <areaCorners y="70"/>
+    <areaCorners x="60" y="10"/>
+    <areaCorners x="70" y="10"/>
+  </TransportationServices>
+  <TransportationServices name="Bus" type="Bus">
+    <areaCorners y="70"/>
+    <areaCorners y="80"/>
+    <areaCorners x="70" y="10"/>
+    <areaCorners x="80" y="10"/>
+  </TransportationServices>
+  <TransportationServices name="Train" type="Train">
+    <areaCorners y="80"/>
+    <areaCorners y="60"/>
+    <areaCorners x="60" y="10"/>
+    <areaCorners x="80" y="10"/>
+  </TransportationServices>
+</am:Terminal>

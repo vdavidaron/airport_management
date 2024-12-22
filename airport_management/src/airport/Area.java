@@ -20,6 +20,8 @@ import org.eclipse.emf.ecore.EObject;
  *
  * @see airport.AirportPackage#getArea()
  * @model abstract="true"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ValidArea'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ValidArea='self.areaCorners-&gt;size() &gt;= 3'"
  * @generated
  */
 public interface Area extends EObject {

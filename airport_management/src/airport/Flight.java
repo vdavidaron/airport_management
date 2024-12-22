@@ -2,8 +2,6 @@
  */
 package airport;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Flight</b></em>'.
@@ -17,13 +15,15 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link airport.Flight#getTime <em>Time</em>}</li>
  *   <li>{@link airport.Flight#getType <em>Type</em>}</li>
  *   <li>{@link airport.Flight#getCity <em>City</em>}</li>
+ *   <li>{@link airport.Flight#isIsInternational <em>Is International</em>}</li>
  * </ul>
  *
  * @see airport.AirportPackage#getFlight()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ValidTime ValidName'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ValidTime='self.time.matches(\'^\\\\d{2}:\\\\d{2}$\')' ValidName='self.name.matches(\'[a-zA-Z0-9]+\')'"
  * @generated
  */
-public interface Flight extends EObject {
+public interface Flight extends namedElement {
 	/**
 	 * Returns the value of the '<em><b>Flight Number</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -114,5 +114,28 @@ public interface Flight extends EObject {
 	 * @generated
 	 */
 	void setCity(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Is International</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is International</em>' attribute.
+	 * @see #setIsInternational(boolean)
+	 * @see airport.AirportPackage#getFlight_IsInternational()
+	 * @model derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.city &lt;&gt; \'LocalCity\''"
+	 * @generated
+	 */
+	boolean isIsInternational();
+
+	/**
+	 * Sets the value of the '{@link airport.Flight#isIsInternational <em>Is International</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is International</em>' attribute.
+	 * @see #isIsInternational()
+	 * @generated
+	 */
+	void setIsInternational(boolean value);
 
 } // Flight

@@ -15,7 +15,9 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
@@ -46,8 +48,54 @@ public class GateAreaItemProvider extends AreaItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addNamePropertyDescriptor(object);
+			addTotalGatesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_namedElement_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_namedElement_name_feature", "_UI_namedElement_type"),
+				 AirportPackage.Literals.NAMED_ELEMENT__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Total Gates feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTotalGatesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_GateArea_totalGates_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_GateArea_totalGates_feature", "_UI_GateArea_type"),
+				 AirportPackage.Literals.GATE_AREA__TOTAL_GATES,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -99,7 +147,10 @@ public class GateAreaItemProvider extends AreaItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_GateArea_type");
+		String label = ((GateArea)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_GateArea_type") :
+			getString("_UI_GateArea_type") + " " + label;
 	}
 
 
@@ -115,6 +166,10 @@ public class GateAreaItemProvider extends AreaItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(GateArea.class)) {
+			case AirportPackage.GATE_AREA__NAME:
+			case AirportPackage.GATE_AREA__TOTAL_GATES:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 			case AirportPackage.GATE_AREA__GATES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;

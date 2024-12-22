@@ -14,9 +14,6 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -33,7 +30,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class ElevatorImpl extends MinimalEObjectImpl.Container implements Elevator {
+public class ElevatorImpl extends namedElementImpl implements Elevator {
 	/**
 	 * The cached value of the '{@link #getConnectedFloors() <em>Connected Floors</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

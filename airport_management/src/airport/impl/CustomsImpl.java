@@ -7,8 +7,6 @@ import airport.Customs;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Customs</b></em>'.
@@ -16,7 +14,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class CustomsImpl extends MinimalEObjectImpl.Container implements Customs {
+public class CustomsImpl extends namedElementImpl implements Customs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -4,9 +4,6 @@ package airport.tests;
 
 import airport.AirportFactory;
 import airport.Customs;
-
-import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
 
 /**
@@ -15,15 +12,7 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class CustomsTest extends TestCase {
-
-	/**
-	 * The fixture for this Customs test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected Customs fixture = null;
+public class CustomsTest extends namedElementTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -45,23 +34,14 @@ public class CustomsTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Customs test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(Customs fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Customs test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected Customs getFixture() {
-		return fixture;
+		return (Customs)fixture;
 	}
 
 	/**

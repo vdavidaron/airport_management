@@ -4,9 +4,6 @@ package airport.tests;
 
 import airport.AirportFactory;
 import airport.Floor;
-
-import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
 
 /**
@@ -15,15 +12,7 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class FloorTest extends TestCase {
-
-	/**
-	 * The fixture for this Floor test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected Floor fixture = null;
+public class FloorTest extends namedElementTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -45,23 +34,14 @@ public class FloorTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Floor test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(Floor fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Floor test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected Floor getFixture() {
-		return fixture;
+		return (Floor)fixture;
 	}
 
 	/**

@@ -4,9 +4,6 @@ package airport.tests;
 
 import airport.AirportFactory;
 import airport.CommonArea;
-
-import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
 
 /**
@@ -15,15 +12,7 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class CommonAreaTest extends TestCase {
-
-	/**
-	 * The fixture for this Common Area test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CommonArea fixture = null;
+public class CommonAreaTest extends namedElementTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -45,23 +34,14 @@ public class CommonAreaTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Common Area test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(CommonArea fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Common Area test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected CommonArea getFixture() {
-		return fixture;
+		return (CommonArea)fixture;
 	}
 
 	/**

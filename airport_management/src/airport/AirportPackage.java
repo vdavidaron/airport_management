@@ -5,6 +5,7 @@ package airport;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -68,87 +69,6 @@ public interface AirportPackage extends EPackage {
 	int TERMINAL = 0;
 
 	/**
-	 * The feature id for the '<em><b>Dropoff</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TERMINAL__DROPOFF = 0;
-
-	/**
-	 * The feature id for the '<em><b>Floors</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TERMINAL__FLOORS = 1;
-
-	/**
-	 * The feature id for the '<em><b>Airside</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TERMINAL__AIRSIDE = 2;
-
-	/**
-	 * The feature id for the '<em><b>Landside</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TERMINAL__LANDSIDE = 3;
-
-	/**
-	 * The feature id for the '<em><b>Flights</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TERMINAL__FLIGHTS = 4;
-
-	/**
-	 * The feature id for the '<em><b>Parking Areas</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TERMINAL__PARKING_AREAS = 5;
-
-	/**
-	 * The feature id for the '<em><b>Transportation Services</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TERMINAL__TRANSPORTATION_SERVICES = 6;
-
-	/**
-	 * The number of structural features of the '<em>Terminal</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TERMINAL_FEATURE_COUNT = 7;
-
-	/**
-	 * The number of operations of the '<em>Terminal</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TERMINAL_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link airport.impl.DivisionImpl <em>Division</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -157,6 +77,223 @@ public interface AirportPackage extends EPackage {
 	 * @generated
 	 */
 	int DIVISION = 7;
+
+	/**
+	 * The meta object id for the '{@link airport.impl.AirsideImpl <em>Airside</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see airport.impl.AirsideImpl
+	 * @see airport.impl.AirportPackageImpl#getAirside()
+	 * @generated
+	 */
+	int AIRSIDE = 1;
+
+	/**
+	 * The meta object id for the '{@link airport.impl.BeltImpl <em>Belt</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see airport.impl.BeltImpl
+	 * @see airport.impl.AirportPackageImpl#getBelt()
+	 * @generated
+	 */
+	int BELT = 2;
+
+	/**
+	 * The meta object id for the '{@link airport.impl.CheckInImpl <em>Check In</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see airport.impl.CheckInImpl
+	 * @see airport.impl.AirportPackageImpl#getCheckIn()
+	 * @generated
+	 */
+	int CHECK_IN = 3;
+
+	/**
+	 * The meta object id for the '{@link airport.impl.CommonAreaImpl <em>Common Area</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see airport.impl.CommonAreaImpl
+	 * @see airport.impl.AirportPackageImpl#getCommonArea()
+	 * @generated
+	 */
+	int COMMON_AREA = 4;
+
+	/**
+	 * The meta object id for the '{@link airport.impl.CounterImpl <em>Counter</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see airport.impl.CounterImpl
+	 * @see airport.impl.AirportPackageImpl#getCounter()
+	 * @generated
+	 */
+	int COUNTER = 5;
+
+	/**
+	 * The meta object id for the '{@link airport.impl.CustomsImpl <em>Customs</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see airport.impl.CustomsImpl
+	 * @see airport.impl.AirportPackageImpl#getCustoms()
+	 * @generated
+	 */
+	int CUSTOMS = 6;
+
+	/**
+	 * The meta object id for the '{@link airport.impl.ElevatorImpl <em>Elevator</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see airport.impl.ElevatorImpl
+	 * @see airport.impl.AirportPackageImpl#getElevator()
+	 * @generated
+	 */
+	int ELEVATOR = 8;
+
+	/**
+	 * The meta object id for the '{@link airport.impl.FlightImpl <em>Flight</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see airport.impl.FlightImpl
+	 * @see airport.impl.AirportPackageImpl#getFlight()
+	 * @generated
+	 */
+	int FLIGHT = 9;
+
+	/**
+	 * The meta object id for the '{@link airport.impl.FloorImpl <em>Floor</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see airport.impl.FloorImpl
+	 * @see airport.impl.AirportPackageImpl#getFloor()
+	 * @generated
+	 */
+	int FLOOR = 10;
+
+	/**
+	 * The meta object id for the '{@link airport.impl.namedElementImpl <em>named Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see airport.impl.namedElementImpl
+	 * @see airport.impl.AirportPackageImpl#getnamedElement()
+	 * @generated
+	 */
+	int NAMED_ELEMENT = 24;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMED_ELEMENT__NAME = 0;
+
+	/**
+	 * The number of structural features of the '<em>named Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMED_ELEMENT_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>named Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMED_ELEMENT_OPERATION_COUNT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TERMINAL__NAME = NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Dropoff</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TERMINAL__DROPOFF = NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Floors</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TERMINAL__FLOORS = NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Airside</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TERMINAL__AIRSIDE = NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Landside</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TERMINAL__LANDSIDE = NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Flights</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TERMINAL__FLIGHTS = NAMED_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Parking Areas</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TERMINAL__PARKING_AREAS = NAMED_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Transportation Services</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TERMINAL__TRANSPORTATION_SERVICES = NAMED_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
+	 * The number of structural features of the '<em>Terminal</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TERMINAL_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 7;
+
+	/**
+	 * The number of operations of the '<em>Terminal</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TERMINAL_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Common Areas</b></em>' containment reference list.
@@ -193,16 +330,6 @@ public interface AirportPackage extends EPackage {
 	 * @ordered
 	 */
 	int DIVISION_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link airport.impl.AirsideImpl <em>Airside</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see airport.impl.AirsideImpl
-	 * @see airport.impl.AirportPackageImpl#getAirside()
-	 * @generated
-	 */
-	int AIRSIDE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Common Areas</b></em>' containment reference list.
@@ -250,14 +377,13 @@ public interface AirportPackage extends EPackage {
 	int AIRSIDE_OPERATION_COUNT = DIVISION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link airport.impl.BeltImpl <em>Belt</em>}' class.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see airport.impl.BeltImpl
-	 * @see airport.impl.AirportPackageImpl#getBelt()
 	 * @generated
+	 * @ordered
 	 */
-	int BELT = 2;
+	int BELT__NAME = NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Flight</b></em>' reference.
@@ -266,7 +392,7 @@ public interface AirportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BELT__FLIGHT = 0;
+	int BELT__FLIGHT = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Belt</em>' class.
@@ -275,7 +401,7 @@ public interface AirportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BELT_FEATURE_COUNT = 1;
+	int BELT_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Belt</em>' class.
@@ -284,17 +410,16 @@ public interface AirportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BELT_OPERATION_COUNT = 0;
+	int BELT_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link airport.impl.CheckInImpl <em>Check In</em>}' class.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see airport.impl.CheckInImpl
-	 * @see airport.impl.AirportPackageImpl#getCheckIn()
 	 * @generated
+	 * @ordered
 	 */
-	int CHECK_IN = 3;
+	int CHECK_IN__NAME = NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Counters</b></em>' containment reference list.
@@ -303,7 +428,7 @@ public interface AirportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHECK_IN__COUNTERS = 0;
+	int CHECK_IN__COUNTERS = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Check In</em>' class.
@@ -312,7 +437,7 @@ public interface AirportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHECK_IN_FEATURE_COUNT = 1;
+	int CHECK_IN_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Check In</em>' class.
@@ -321,17 +446,16 @@ public interface AirportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHECK_IN_OPERATION_COUNT = 0;
+	int CHECK_IN_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link airport.impl.CommonAreaImpl <em>Common Area</em>}' class.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see airport.impl.CommonAreaImpl
-	 * @see airport.impl.AirportPackageImpl#getCommonArea()
 	 * @generated
+	 * @ordered
 	 */
-	int COMMON_AREA = 4;
+	int COMMON_AREA__NAME = NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -340,7 +464,7 @@ public interface AirportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMON_AREA__TYPE = 0;
+	int COMMON_AREA__TYPE = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Common Area</em>' class.
@@ -349,7 +473,7 @@ public interface AirportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMON_AREA_FEATURE_COUNT = 1;
+	int COMMON_AREA_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Common Area</em>' class.
@@ -358,17 +482,16 @@ public interface AirportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMON_AREA_OPERATION_COUNT = 0;
+	int COMMON_AREA_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link airport.impl.CounterImpl <em>Counter</em>}' class.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see airport.impl.CounterImpl
-	 * @see airport.impl.AirportPackageImpl#getCounter()
 	 * @generated
+	 * @ordered
 	 */
-	int COUNTER = 5;
+	int COUNTER__NAME = NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Flight</b></em>' reference.
@@ -377,7 +500,7 @@ public interface AirportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COUNTER__FLIGHT = 0;
+	int COUNTER__FLIGHT = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Counter</em>' class.
@@ -386,7 +509,7 @@ public interface AirportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COUNTER_FEATURE_COUNT = 1;
+	int COUNTER_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Counter</em>' class.
@@ -395,17 +518,16 @@ public interface AirportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COUNTER_OPERATION_COUNT = 0;
+	int COUNTER_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link airport.impl.CustomsImpl <em>Customs</em>}' class.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see airport.impl.CustomsImpl
-	 * @see airport.impl.AirportPackageImpl#getCustoms()
 	 * @generated
+	 * @ordered
 	 */
-	int CUSTOMS = 6;
+	int CUSTOMS__NAME = NAMED_ELEMENT__NAME;
 
 	/**
 	 * The number of structural features of the '<em>Customs</em>' class.
@@ -414,7 +536,7 @@ public interface AirportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTOMS_FEATURE_COUNT = 0;
+	int CUSTOMS_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Customs</em>' class.
@@ -423,17 +545,16 @@ public interface AirportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTOMS_OPERATION_COUNT = 0;
+	int CUSTOMS_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link airport.impl.ElevatorImpl <em>Elevator</em>}' class.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see airport.impl.ElevatorImpl
-	 * @see airport.impl.AirportPackageImpl#getElevator()
 	 * @generated
+	 * @ordered
 	 */
-	int ELEVATOR = 8;
+	int ELEVATOR__NAME = NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Connected Floors</b></em>' containment reference list.
@@ -442,7 +563,7 @@ public interface AirportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEVATOR__CONNECTED_FLOORS = 0;
+	int ELEVATOR__CONNECTED_FLOORS = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Elevator</em>' class.
@@ -451,7 +572,7 @@ public interface AirportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEVATOR_FEATURE_COUNT = 1;
+	int ELEVATOR_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Elevator</em>' class.
@@ -460,17 +581,16 @@ public interface AirportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEVATOR_OPERATION_COUNT = 0;
+	int ELEVATOR_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link airport.impl.FlightImpl <em>Flight</em>}' class.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see airport.impl.FlightImpl
-	 * @see airport.impl.AirportPackageImpl#getFlight()
 	 * @generated
+	 * @ordered
 	 */
-	int FLIGHT = 9;
+	int FLIGHT__NAME = NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Flight Number</b></em>' attribute.
@@ -479,7 +599,7 @@ public interface AirportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FLIGHT__FLIGHT_NUMBER = 0;
+	int FLIGHT__FLIGHT_NUMBER = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Time</b></em>' attribute.
@@ -488,7 +608,7 @@ public interface AirportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FLIGHT__TIME = 1;
+	int FLIGHT__TIME = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -497,7 +617,7 @@ public interface AirportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FLIGHT__TYPE = 2;
+	int FLIGHT__TYPE = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>City</b></em>' attribute.
@@ -506,7 +626,16 @@ public interface AirportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FLIGHT__CITY = 3;
+	int FLIGHT__CITY = NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Is International</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLIGHT__IS_INTERNATIONAL = NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Flight</em>' class.
@@ -515,7 +644,7 @@ public interface AirportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FLIGHT_FEATURE_COUNT = 4;
+	int FLIGHT_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Flight</em>' class.
@@ -524,17 +653,16 @@ public interface AirportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FLIGHT_OPERATION_COUNT = 0;
+	int FLIGHT_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link airport.impl.FloorImpl <em>Floor</em>}' class.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see airport.impl.FloorImpl
-	 * @see airport.impl.AirportPackageImpl#getFloor()
 	 * @generated
+	 * @ordered
 	 */
-	int FLOOR = 10;
+	int FLOOR__NAME = NAMED_ELEMENT__NAME;
 
 	/**
 	 * The number of structural features of the '<em>Floor</em>' class.
@@ -543,7 +671,7 @@ public interface AirportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FLOOR_FEATURE_COUNT = 0;
+	int FLOOR_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Floor</em>' class.
@@ -552,35 +680,7 @@ public interface AirportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FLOOR_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link airport.impl.namedElementImpl <em>named Element</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see airport.impl.namedElementImpl
-	 * @see airport.impl.AirportPackageImpl#getnamedElement()
-	 * @generated
-	 */
-	int NAMED_ELEMENT = 24;
-
-	/**
-	 * The number of structural features of the '<em>named Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAMED_ELEMENT_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>named Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAMED_ELEMENT_OPERATION_COUNT = 0;
+	int FLOOR_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link airport.impl.GateImpl <em>Gate</em>}' class.
@@ -591,6 +691,15 @@ public interface AirportPackage extends EPackage {
 	 * @generated
 	 */
 	int GATE = 11;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GATE__NAME = NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Boarding</b></em>' attribute.
@@ -749,13 +858,22 @@ public interface AirportPackage extends EPackage {
 	int SECURITY_CHECK = 14;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITY_CHECK__NAME = NAMED_ELEMENT__NAME;
+
+	/**
 	 * The number of structural features of the '<em>Security Check</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SECURITY_CHECK_FEATURE_COUNT = 0;
+	int SECURITY_CHECK_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Security Check</em>' class.
@@ -764,7 +882,7 @@ public interface AirportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SECURITY_CHECK_OPERATION_COUNT = 0;
+	int SECURITY_CHECK_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link airport.impl.AreaImpl <em>Area</em>}' class.
@@ -823,13 +941,22 @@ public interface AirportPackage extends EPackage {
 	int ARRIVAL__AREA_CORNERS = AREA__AREA_CORNERS;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRIVAL__NAME = AREA_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Baggage Claim</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARRIVAL__BAGGAGE_CLAIM = AREA_FEATURE_COUNT + 0;
+	int ARRIVAL__BAGGAGE_CLAIM = AREA_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Customs</b></em>' containment reference.
@@ -838,7 +965,7 @@ public interface AirportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARRIVAL__CUSTOMS = AREA_FEATURE_COUNT + 1;
+	int ARRIVAL__CUSTOMS = AREA_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Arrival</em>' class.
@@ -847,7 +974,7 @@ public interface AirportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARRIVAL_FEATURE_COUNT = AREA_FEATURE_COUNT + 2;
+	int ARRIVAL_FEATURE_COUNT = AREA_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Arrival</em>' class.
@@ -878,13 +1005,22 @@ public interface AirportPackage extends EPackage {
 	int BAGGAGE_CLAIM__AREA_CORNERS = AREA__AREA_CORNERS;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BAGGAGE_CLAIM__NAME = AREA_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Belts</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BAGGAGE_CLAIM__BELTS = AREA_FEATURE_COUNT + 0;
+	int BAGGAGE_CLAIM__BELTS = AREA_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Baggage Claim</em>' class.
@@ -893,7 +1029,7 @@ public interface AirportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BAGGAGE_CLAIM_FEATURE_COUNT = AREA_FEATURE_COUNT + 1;
+	int BAGGAGE_CLAIM_FEATURE_COUNT = AREA_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Baggage Claim</em>' class.
@@ -924,13 +1060,22 @@ public interface AirportPackage extends EPackage {
 	int BAGGAGE_DROP_OFF__AREA_CORNERS = AREA__AREA_CORNERS;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BAGGAGE_DROP_OFF__NAME = AREA_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Counters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BAGGAGE_DROP_OFF__COUNTERS = AREA_FEATURE_COUNT + 0;
+	int BAGGAGE_DROP_OFF__COUNTERS = AREA_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Baggage Drop Off</em>' class.
@@ -939,7 +1084,7 @@ public interface AirportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BAGGAGE_DROP_OFF_FEATURE_COUNT = AREA_FEATURE_COUNT + 1;
+	int BAGGAGE_DROP_OFF_FEATURE_COUNT = AREA_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Baggage Drop Off</em>' class.
@@ -970,13 +1115,22 @@ public interface AirportPackage extends EPackage {
 	int DEPARTURE__AREA_CORNERS = AREA__AREA_CORNERS;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPARTURE__NAME = AREA_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Security</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEPARTURE__SECURITY = AREA_FEATURE_COUNT + 0;
+	int DEPARTURE__SECURITY = AREA_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Check In</b></em>' containment reference list.
@@ -985,7 +1139,7 @@ public interface AirportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEPARTURE__CHECK_IN = AREA_FEATURE_COUNT + 1;
+	int DEPARTURE__CHECK_IN = AREA_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Baggage Drop Off</b></em>' containment reference list.
@@ -994,7 +1148,7 @@ public interface AirportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEPARTURE__BAGGAGE_DROP_OFF = AREA_FEATURE_COUNT + 2;
+	int DEPARTURE__BAGGAGE_DROP_OFF = AREA_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Departure</em>' class.
@@ -1003,7 +1157,7 @@ public interface AirportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEPARTURE_FEATURE_COUNT = AREA_FEATURE_COUNT + 3;
+	int DEPARTURE_FEATURE_COUNT = AREA_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Departure</em>' class.
@@ -1034,13 +1188,22 @@ public interface AirportPackage extends EPackage {
 	int DROP_OFF__AREA_CORNERS = AREA__AREA_CORNERS;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DROP_OFF__NAME = AREA_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Drop Off</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DROP_OFF_FEATURE_COUNT = AREA_FEATURE_COUNT + 0;
+	int DROP_OFF_FEATURE_COUNT = AREA_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Drop Off</em>' class.
@@ -1071,13 +1234,31 @@ public interface AirportPackage extends EPackage {
 	int GATE_AREA__AREA_CORNERS = AREA__AREA_CORNERS;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GATE_AREA__NAME = AREA_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Gates</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GATE_AREA__GATES = AREA_FEATURE_COUNT + 0;
+	int GATE_AREA__GATES = AREA_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Total Gates</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GATE_AREA__TOTAL_GATES = AREA_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Gate Area</em>' class.
@@ -1086,7 +1267,25 @@ public interface AirportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GATE_AREA_FEATURE_COUNT = AREA_FEATURE_COUNT + 1;
+	int GATE_AREA_FEATURE_COUNT = AREA_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Calculate Total Gates</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GATE_AREA___CALCULATE_TOTAL_GATES = AREA_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Find Gate By Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GATE_AREA___FIND_GATE_BY_NAME__STRING = AREA_OPERATION_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Gate Area</em>' class.
@@ -1095,7 +1294,7 @@ public interface AirportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GATE_AREA_OPERATION_COUNT = AREA_OPERATION_COUNT + 0;
+	int GATE_AREA_OPERATION_COUNT = AREA_OPERATION_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link airport.impl.ParkingAreaImpl <em>Parking Area</em>}' class.
@@ -1117,13 +1316,22 @@ public interface AirportPackage extends EPackage {
 	int PARKING_AREA__AREA_CORNERS = AREA__AREA_CORNERS;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARKING_AREA__NAME = AREA_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Parking Area</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARKING_AREA_FEATURE_COUNT = AREA_FEATURE_COUNT + 0;
+	int PARKING_AREA_FEATURE_COUNT = AREA_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Parking Area</em>' class.
@@ -1154,13 +1362,22 @@ public interface AirportPackage extends EPackage {
 	int TRANSPORTATION_SERVICES__AREA_CORNERS = AREA__AREA_CORNERS;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSPORTATION_SERVICES__NAME = AREA_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSPORTATION_SERVICES__TYPE = AREA_FEATURE_COUNT + 0;
+	int TRANSPORTATION_SERVICES__TYPE = AREA_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Transportation Services</em>' class.
@@ -1169,7 +1386,7 @@ public interface AirportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSPORTATION_SERVICES_FEATURE_COUNT = AREA_FEATURE_COUNT + 1;
+	int TRANSPORTATION_SERVICES_FEATURE_COUNT = AREA_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Transportation Services</em>' class.
@@ -1521,6 +1738,17 @@ public interface AirportPackage extends EPackage {
 	EAttribute getFlight_City();
 
 	/**
+	 * Returns the meta object for the attribute '{@link airport.Flight#isIsInternational <em>Is International</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is International</em>'.
+	 * @see airport.Flight#isIsInternational()
+	 * @see #getFlight()
+	 * @generated
+	 */
+	EAttribute getFlight_IsInternational();
+
+	/**
 	 * Returns the meta object for class '{@link airport.Floor <em>Floor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1806,6 +2034,37 @@ public interface AirportPackage extends EPackage {
 	EReference getGateArea_Gates();
 
 	/**
+	 * Returns the meta object for the attribute '{@link airport.GateArea#getTotalGates <em>Total Gates</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Total Gates</em>'.
+	 * @see airport.GateArea#getTotalGates()
+	 * @see #getGateArea()
+	 * @generated
+	 */
+	EAttribute getGateArea_TotalGates();
+
+	/**
+	 * Returns the meta object for the '{@link airport.GateArea#calculateTotalGates() <em>Calculate Total Gates</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Calculate Total Gates</em>' operation.
+	 * @see airport.GateArea#calculateTotalGates()
+	 * @generated
+	 */
+	EOperation getGateArea__CalculateTotalGates();
+
+	/**
+	 * Returns the meta object for the '{@link airport.GateArea#findGateByName(java.lang.String) <em>Find Gate By Name</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Find Gate By Name</em>' operation.
+	 * @see airport.GateArea#findGateByName(java.lang.String)
+	 * @generated
+	 */
+	EOperation getGateArea__FindGateByName__String();
+
+	/**
 	 * Returns the meta object for class '{@link airport.ParkingArea <em>Parking Area</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1845,6 +2104,17 @@ public interface AirportPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getnamedElement();
+
+	/**
+	 * Returns the meta object for the attribute '{@link airport.namedElement#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see airport.namedElement#getName()
+	 * @see #getnamedElement()
+	 * @generated
+	 */
+	EAttribute getnamedElement_Name();
 
 	/**
 	 * Returns the meta object for enum '{@link airport.CommonAreaTypes <em>Common Area Types</em>}'.
@@ -2152,6 +2422,14 @@ public interface AirportPackage extends EPackage {
 		EAttribute FLIGHT__CITY = eINSTANCE.getFlight_City();
 
 		/**
+		 * The meta object literal for the '<em><b>Is International</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FLIGHT__IS_INTERNATIONAL = eINSTANCE.getFlight_IsInternational();
+
+		/**
 		 * The meta object literal for the '{@link airport.impl.FloorImpl <em>Floor</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2392,6 +2670,30 @@ public interface AirportPackage extends EPackage {
 		EReference GATE_AREA__GATES = eINSTANCE.getGateArea_Gates();
 
 		/**
+		 * The meta object literal for the '<em><b>Total Gates</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GATE_AREA__TOTAL_GATES = eINSTANCE.getGateArea_TotalGates();
+
+		/**
+		 * The meta object literal for the '<em><b>Calculate Total Gates</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GATE_AREA___CALCULATE_TOTAL_GATES = eINSTANCE.getGateArea__CalculateTotalGates();
+
+		/**
+		 * The meta object literal for the '<em><b>Find Gate By Name</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GATE_AREA___FIND_GATE_BY_NAME__STRING = eINSTANCE.getGateArea__FindGateByName__String();
+
+		/**
 		 * The meta object literal for the '{@link airport.impl.ParkingAreaImpl <em>Parking Area</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2428,6 +2730,14 @@ public interface AirportPackage extends EPackage {
 		 * @generated
 		 */
 		EClass NAMED_ELEMENT = eINSTANCE.getnamedElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NAMED_ELEMENT__NAME = eINSTANCE.getnamedElement_Name();
 
 		/**
 		 * The meta object literal for the '{@link airport.CommonAreaTypes <em>Common Area Types</em>}' enum.

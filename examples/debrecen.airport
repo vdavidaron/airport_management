@@ -1,2 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<am:Terminal xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:am="http://example.org/airport"/>
+<am:Terminal xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:am="http://example.org/airport" name="Debrecen International">
+  <dropoff name="Repuloter Parkolo">
+    <areaCorners/>
+    <areaCorners y="20"/>
+    <areaCorners x="10" y="20"/>
+    <areaCorners x="10" y="10"/>
+  </dropoff>
+  <floors name="Ground Floor"/>
+  <floors name="First Floor"/>
+  <airside>
+    <commonAreas name="Waiting Area"/>
+    <commonAreas name="Toilet 3" type="Restroom"/>
+    <commonAreas name="Toilet 4" type="Restroom"/>
+    <commonAreas name="Toilet 5" type="Restroom"/>
+    <commonAreas name="Shop" type="Retail"/>
+    <commonAreas name="Snack Bar" type="Dining"/>
+    <floor name="Ground Floor"/>
+    <gateArea name="Schengen Countries">
+      <areaCorners x="30" y="30"/>
+      <areaCorners x="30" y="50"/>
+      <areaCorners x="50" y="50"/>
+      <areaCorners x="50" y="30"/>
+      <gates name="1" boarding="true" flight="//@flights.4"/>
+      <gates name="2"/>
+    </gateArea>
+    <gateArea name="Non-Schengen Countries">
+      <areaCorners x="50" y="50"/>
+      <areaCorners x="50" y="70"/>
+      <areaCorners x="70" y="50"/>
+      <areaCorners x="70" y="70"/>
+      <gates name="3" flight="//@flights.1"/>
+      <gates name="4" flight="//@flights.3"/>
+    </gateArea>
+  </airside>
+  <landside>
+    <departureArea name="Main Departure">
+      <areaCorners x="40" y="60"/>
+      <areaCorners x="40" y="40"/>
+      <areaCorners x="60" y="40"/>
+      <areaCorners x="60" y="60"/>
+      <security name="Passesnger Security Check"/>
+      <checkIn name="Check-in">
+        <counters name="1" flight="//@flights.1"/>
+        <counters name="2" flight="//@flights.3"/>
+        <counters name="3" flight="//@flights.0"/>
+        <counters name="4" flight="//@flights.2"/>
+        <counters name="5"/>
+        <counters name="6"/>
+      </checkIn>
+      <baggageDropOff name="DropOff">
+        <areaCorners x="40" y="40"/>
+        <areaCorners x="40" y="60"/>
+        <areaCorners x="60" y="40"/>
+        <areaCorners x="60" y="60"/>
+        <counters name="1" flight="//@flights.1"/>
+        <counters name="2" flight="//@flights.3"/>
+        <counters name="3" flight="//@flights.0"/>
+        <counters name="4" flight="//@flights.2"/>
+        <counters name="5"/>
+        <counters name="6"/>
+      </baggageDropOff>
+    </departureArea>
+    <arrivalArea name="Main arrival">
+      <areaCorners x="60" y="60"/>
+      <areaCorners x="60" y="80"/>
+      <areaCorners x="80" y="60"/>
+      <areaCorners x="80" y="80"/>
+      <baggageClaim name="Schengen arrival">
+        <areaCorners x="80" y="100"/>
+        <areaCorners x="80" y="80"/>
+        <areaCorners x="100" y="80"/>
+        <areaCorners x="100" y="100"/>
+        <belts name="1" flight="//@flights.4"/>
+      </baggageClaim>
+      <baggageClaim name="Non-Schengen arrival">
+        <areaCorners x="100" y="110"/>
+        <areaCorners x="100" y="100"/>
+        <areaCorners x="110" y="100"/>
+        <areaCorners x="110" y="110"/>
+        <belts name="2" flight="//@flights.6"/>
+      </baggageClaim>
+      <customs name="Customs"/>
+    </arrivalArea>
+  </landside>
+  <flights name="LH1687" flightNumber="LH1687" time="17:25" type="departure" city="Munich"/>
+  <flights name="IZ702" flightNumber="IZ702" time="17:40" type="departure" city="Tel-Aviv"/>
+  <flights name="W92701" flightNumber="W92701" time="21:10" type="departure" city="London"/>
+  <flights name="D4703" flightNumber="D4703" time="11:10" type="departure" city="Tbilisi"/>
+  <flights name="LH1686" flightNumber="LH1686" time="16:35" city="Munich"/>
+  <flights name="IZ701" flightNumber="IZ701" time="16:50" city="Tel-Aviv"/>
+  <flights name="W92702" flightNumber="W92702" time="20:35" city="London"/>
+  <ParkingAreas name="Main Parking">
+    <areaCorners y="20"/>
+    <areaCorners x="20" y="20"/>
+    <areaCorners x="20"/>
+    <areaCorners/>
+  </ParkingAreas>
+  <TransportationServices name="Taxi">
+    <areaCorners x="20" y="30"/>
+    <areaCorners x="20" y="20"/>
+    <areaCorners x="30" y="20"/>
+    <areaCorners x="30" y="30"/>
+  </TransportationServices>
+  <TransportationServices name="Bus" type="Bus">
+    <areaCorners x="30" y="30"/>
+    <areaCorners x="30" y="40"/>
+    <areaCorners x="40" y="40"/>
+    <areaCorners x="40" y="30"/>
+  </TransportationServices>
+</am:Terminal>

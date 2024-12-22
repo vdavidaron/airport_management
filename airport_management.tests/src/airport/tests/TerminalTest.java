@@ -4,9 +4,6 @@ package airport.tests;
 
 import airport.AirportFactory;
 import airport.Terminal;
-
-import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
 
 /**
@@ -15,15 +12,7 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class TerminalTest extends TestCase {
-
-	/**
-	 * The fixture for this Terminal test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected Terminal fixture = null;
+public class TerminalTest extends namedElementTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -45,23 +34,14 @@ public class TerminalTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Terminal test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(Terminal fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Terminal test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected Terminal getFixture() {
-		return fixture;
+		return (Terminal)fixture;
 	}
 
 	/**

@@ -31,6 +31,7 @@ public class Airport_managementAllTests extends TestSuite {
 	 */
 	public static Test suite() {
 		TestSuite suite = new Airport_managementAllTests("Airport_management Tests");
+		suite.addTest(AirportTests.suite());
 		return suite;
 	}
 

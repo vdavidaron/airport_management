@@ -4,9 +4,6 @@ package airport.tests;
 
 import airport.AirportFactory;
 import airport.SecurityCheck;
-
-import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
 
 /**
@@ -15,15 +12,7 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SecurityCheckTest extends TestCase {
-
-	/**
-	 * The fixture for this Security Check test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected SecurityCheck fixture = null;
+public class SecurityCheckTest extends namedElementTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -45,23 +34,14 @@ public class SecurityCheckTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Security Check test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(SecurityCheck fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Security Check test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected SecurityCheck getFixture() {
-		return fixture;
+		return (SecurityCheck)fixture;
 	}
 
 	/**

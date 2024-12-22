@@ -33,12 +33,15 @@ import airport.TransportationServices;
 import airport.TransportationTypes;
 import airport.namedElement;
 
+import airport.util.AirportValidator;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
+import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -295,6 +298,16 @@ public class AirportPackageImpl extends EPackageImpl implements AirportPackage {
 
 		// Initialize created meta-data
 		theAirportPackage.initializePackageContents();
+
+		// Register package validator
+		EValidator.Registry.INSTANCE.put
+			(theAirportPackage,
+			 new EValidator.Descriptor() {
+				 @Override
+				 public EValidator getEValidator() {
+					 return AirportValidator.INSTANCE;
+				 }
+			 });
 
 		// Mark meta-data to indicate it can't be changed
 		theAirportPackage.freeze();
@@ -600,6 +613,16 @@ public class AirportPackageImpl extends EPackageImpl implements AirportPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getFlight_IsInternational() {
+		return (EAttribute)flightEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getFloor() {
 		return floorEClass;
 	}
@@ -870,6 +893,36 @@ public class AirportPackageImpl extends EPackageImpl implements AirportPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getGateArea_TotalGates() {
+		return (EAttribute)gateAreaEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getGateArea__CalculateTotalGates() {
+		return gateAreaEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getGateArea__FindGateByName__String() {
+		return gateAreaEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getParkingArea() {
 		return parkingAreaEClass;
 	}
@@ -902,6 +955,16 @@ public class AirportPackageImpl extends EPackageImpl implements AirportPackage {
 	@Override
 	public EClass getnamedElement() {
 		return namedElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getnamedElement_Name() {
+		return (EAttribute)namedElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1001,6 +1064,7 @@ public class AirportPackageImpl extends EPackageImpl implements AirportPackage {
 		createEAttribute(flightEClass, FLIGHT__TIME);
 		createEAttribute(flightEClass, FLIGHT__TYPE);
 		createEAttribute(flightEClass, FLIGHT__CITY);
+		createEAttribute(flightEClass, FLIGHT__IS_INTERNATIONAL);
 
 		floorEClass = createEClass(FLOOR);
 
@@ -1040,6 +1104,9 @@ public class AirportPackageImpl extends EPackageImpl implements AirportPackage {
 
 		gateAreaEClass = createEClass(GATE_AREA);
 		createEReference(gateAreaEClass, GATE_AREA__GATES);
+		createEAttribute(gateAreaEClass, GATE_AREA__TOTAL_GATES);
+		createEOperation(gateAreaEClass, GATE_AREA___CALCULATE_TOTAL_GATES);
+		createEOperation(gateAreaEClass, GATE_AREA___FIND_GATE_BY_NAME__STRING);
 
 		parkingAreaEClass = createEClass(PARKING_AREA);
 
@@ -1047,6 +1114,7 @@ public class AirportPackageImpl extends EPackageImpl implements AirportPackage {
 		createEAttribute(transportationServicesEClass, TRANSPORTATION_SERVICES__TYPE);
 
 		namedElementEClass = createEClass(NAMED_ELEMENT);
+		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
 
 		// Create enums
 		commonAreaTypesEEnum = createEEnum(COMMON_AREA_TYPES);
@@ -1082,16 +1150,33 @@ public class AirportPackageImpl extends EPackageImpl implements AirportPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		terminalEClass.getESuperTypes().add(this.getnamedElement());
 		airsideEClass.getESuperTypes().add(this.getDivision());
+		beltEClass.getESuperTypes().add(this.getnamedElement());
+		checkInEClass.getESuperTypes().add(this.getnamedElement());
+		commonAreaEClass.getESuperTypes().add(this.getnamedElement());
+		counterEClass.getESuperTypes().add(this.getnamedElement());
+		customsEClass.getESuperTypes().add(this.getnamedElement());
+		elevatorEClass.getESuperTypes().add(this.getnamedElement());
+		flightEClass.getESuperTypes().add(this.getnamedElement());
+		floorEClass.getESuperTypes().add(this.getnamedElement());
 		gateEClass.getESuperTypes().add(this.getnamedElement());
 		landsideEClass.getESuperTypes().add(this.getDivision());
+		securityCheckEClass.getESuperTypes().add(this.getnamedElement());
 		arrivalEClass.getESuperTypes().add(this.getArea());
+		arrivalEClass.getESuperTypes().add(this.getnamedElement());
 		baggageClaimEClass.getESuperTypes().add(this.getArea());
+		baggageClaimEClass.getESuperTypes().add(this.getnamedElement());
 		baggageDropOffEClass.getESuperTypes().add(this.getArea());
+		baggageDropOffEClass.getESuperTypes().add(this.getnamedElement());
 		departureEClass.getESuperTypes().add(this.getArea());
+		departureEClass.getESuperTypes().add(this.getnamedElement());
 		dropOffEClass.getESuperTypes().add(this.getArea());
+		dropOffEClass.getESuperTypes().add(this.getnamedElement());
 		gateAreaEClass.getESuperTypes().add(this.getArea());
+		gateAreaEClass.getESuperTypes().add(this.getnamedElement());
 		parkingAreaEClass.getESuperTypes().add(this.getArea());
+		parkingAreaEClass.getESuperTypes().add(this.getnamedElement());
 		transportationServicesEClass.getESuperTypes().add(this.getArea());
 		transportationServicesEClass.getESuperTypes().add(this.getnamedElement());
 
@@ -1134,6 +1219,7 @@ public class AirportPackageImpl extends EPackageImpl implements AirportPackage {
 		initEAttribute(getFlight_Time(), ecorePackage.getEString(), "time", null, 0, 1, Flight.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFlight_Type(), this.getFlightType(), "type", null, 0, 1, Flight.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFlight_City(), ecorePackage.getEString(), "city", null, 0, 1, Flight.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFlight_IsInternational(), ecorePackage.getEBoolean(), "isInternational", null, 0, 1, Flight.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(floorEClass, Floor.class, "Floor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1173,6 +1259,12 @@ public class AirportPackageImpl extends EPackageImpl implements AirportPackage {
 
 		initEClass(gateAreaEClass, GateArea.class, "GateArea", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getGateArea_Gates(), this.getGate(), null, "gates", null, 1, -1, GateArea.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGateArea_TotalGates(), ecorePackage.getEInt(), "totalGates", null, 0, 1, GateArea.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+
+		initEOperation(getGateArea__CalculateTotalGates(), ecorePackage.getEInt(), "calculateTotalGates", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		EOperation op = initEOperation(getGateArea__FindGateByName__String(), this.getGate(), "findGateByName", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(parkingAreaEClass, ParkingArea.class, "ParkingArea", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1180,6 +1272,7 @@ public class AirportPackageImpl extends EPackageImpl implements AirportPackage {
 		initEAttribute(getTransportationServices_Type(), this.getTransportationTypes(), "type", null, 0, 1, TransportationServices.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(namedElementEClass, namedElement.class, "namedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getnamedElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, namedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(commonAreaTypesEEnum, CommonAreaTypes.class, "CommonAreaTypes");
@@ -1202,6 +1295,81 @@ public class AirportPackageImpl extends EPackageImpl implements AirportPackage {
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// http://www.eclipse.org/emf/2002/Ecore
+		createEcoreAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore/OCL
+		createOCLAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createEcoreAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore";
+		addAnnotation
+		  (counterEClass,
+		   source,
+		   new String[] {
+			   "constraints", "ValidCounter"
+		   });
+		addAnnotation
+		  (flightEClass,
+		   source,
+		   new String[] {
+			   "constraints", "ValidTime ValidName"
+		   });
+		addAnnotation
+		  (areaEClass,
+		   source,
+		   new String[] {
+			   "constraints", "ValidArea"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createOCLAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";
+		addAnnotation
+		  (counterEClass,
+		   source,
+		   new String[] {
+			   "ValidCounter", "self.flight = null or self.flight.type = FlightType::departure"
+		   });
+		addAnnotation
+		  (flightEClass,
+		   source,
+		   new String[] {
+			   "ValidTime", "self.time.matches(\'^\\\\d{2}:\\\\d{2}$\')",
+			   "ValidName", "self.name.matches(\'[a-zA-Z0-9]+\')"
+		   });
+		addAnnotation
+		  (getFlight_IsInternational(),
+		   source,
+		   new String[] {
+			   "derivation", "self.city <> \'LocalCity\'"
+		   });
+		addAnnotation
+		  (areaEClass,
+		   source,
+		   new String[] {
+			   "ValidArea", "self.areaCorners->size() >= 3"
+		   });
+		addAnnotation
+		  (getGateArea_TotalGates(),
+		   source,
+		   new String[] {
+			   "derivation", "self.gates->size()"
+		   });
 	}
 
 } //AirportPackageImpl

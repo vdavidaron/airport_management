@@ -4,9 +4,6 @@ package airport.tests;
 
 import airport.AirportFactory;
 import airport.Belt;
-
-import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
 
 /**
@@ -15,15 +12,7 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class BeltTest extends TestCase {
-
-	/**
-	 * The fixture for this Belt test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected Belt fixture = null;
+public class BeltTest extends namedElementTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -45,23 +34,14 @@ public class BeltTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Belt test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(Belt fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Belt test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected Belt getFixture() {
-		return fixture;
+		return (Belt)fixture;
 	}
 
 	/**

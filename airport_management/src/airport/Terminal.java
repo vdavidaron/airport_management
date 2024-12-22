@@ -4,8 +4,6 @@ package airport;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Terminal</b></em>'.
@@ -28,7 +26,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Terminal extends EObject {
+public interface Terminal extends namedElement {
 	/**
 	 * Returns the value of the '<em><b>Dropoff</b></em>' containment reference list.
 	 * The list contents are of type {@link airport.DropOff}.

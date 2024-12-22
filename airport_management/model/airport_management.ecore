@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="airport" nsURI="http://example.org/airport" nsPrefix="am">
-  <eClassifiers xsi:type="ecore:EClass" name="Terminal">
+  <eClassifiers xsi:type="ecore:EClass" name="Terminal" eSuperTypes="#//namedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="dropoff" lowerBound="1"
         upperBound="-1" eType="#//DropOff" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="floors" lowerBound="1"
@@ -21,37 +21,55 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="gateArea" lowerBound="1"
         upperBound="-1" eType="#//GateArea" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Belt">
+  <eClassifiers xsi:type="ecore:EClass" name="Belt" eSuperTypes="#//namedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="flight" eType="#//Flight"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CheckIn">
+  <eClassifiers xsi:type="ecore:EClass" name="CheckIn" eSuperTypes="#//namedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="counters" lowerBound="1"
         upperBound="-1" eType="#//Counter" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CommonArea">
+  <eClassifiers xsi:type="ecore:EClass" name="CommonArea" eSuperTypes="#//namedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//CommonAreaTypes"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Counter">
+  <eClassifiers xsi:type="ecore:EClass" name="Counter" eSuperTypes="#//namedElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="ValidCounter"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="ValidCounter" value="self.flight = null or self.flight.type = FlightType::departure"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="flight" eType="#//Flight"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Customs"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Customs" eSuperTypes="#//namedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="Division" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="commonAreas" upperBound="-1"
         eType="#//CommonArea" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="floor" lowerBound="1" eType="#//Floor"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Elevator">
+  <eClassifiers xsi:type="ecore:EClass" name="Elevator" eSuperTypes="#//namedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="connectedFloors" lowerBound="1"
         upperBound="-1" eType="#//Floor" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Flight">
+  <eClassifiers xsi:type="ecore:EClass" name="Flight" eSuperTypes="#//namedElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="ValidTime ValidName"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="ValidTime" value="self.time.matches('^\\d{2}:\\d{2}$')"/>
+      <details key="ValidName" value="self.name.matches('[a-zA-Z0-9]+')"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="flightNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="time" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//FlightType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="city" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isInternational" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" derived="true">
+    	<eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        	<details key="derivation" value="self.city &lt;&gt; 'LocalCity'" />
+    	</eAnnotations>
+	</eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Floor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Floor" eSuperTypes="#//namedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="Gate" eSuperTypes="#//namedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="boarding" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="flight" eType="#//Flight"/>
@@ -66,7 +84,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SecurityCheck"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SecurityCheck" eSuperTypes="#//namedElement"/>
   <eClassifiers xsi:type="ecore:EEnum" name="CommonAreaTypes">
     <eLiterals name="Sitting" literal="SittingLiteral&#x9;Sitting"/>
     <eLiterals name="Dining" literal="Dining"/>
@@ -86,24 +104,30 @@
     <eLiterals name="Train"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Area" abstract="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="ValidArea"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="ValidArea" value="self.areaCorners->size() >= 3"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="areaCorners" lowerBound="1"
         upperBound="-1" eType="#//Point" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Arrival" eSuperTypes="#//Area">
+  <eClassifiers xsi:type="ecore:EClass" name="Arrival" eSuperTypes="#//Area #//namedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="baggageClaim" lowerBound="1"
         upperBound="-1" eType="#//BaggageClaim" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="customs" lowerBound="1"
         eType="#//Customs" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BaggageClaim" eSuperTypes="#//Area">
+  <eClassifiers xsi:type="ecore:EClass" name="BaggageClaim" eSuperTypes="#//Area #//namedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="belts" lowerBound="1" upperBound="-1"
         eType="#//Belt" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BaggageDropOff" eSuperTypes="#//Area">
+  <eClassifiers xsi:type="ecore:EClass" name="BaggageDropOff" eSuperTypes="#//Area #//namedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="counters" lowerBound="1"
         upperBound="-1" eType="#//Counter" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Departure" eSuperTypes="#//Area">
+  <eClassifiers xsi:type="ecore:EClass" name="Departure" eSuperTypes="#//Area #//namedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="security" lowerBound="1"
         upperBound="-1" eType="#//SecurityCheck" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="checkIn" lowerBound="1"
@@ -111,14 +135,25 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="baggageDropOff" lowerBound="1"
         upperBound="-1" eType="#//BaggageDropOff" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DropOff" eSuperTypes="#//Area"/>
-  <eClassifiers xsi:type="ecore:EClass" name="GateArea" eSuperTypes="#//Area">
+  <eClassifiers xsi:type="ecore:EClass" name="DropOff" eSuperTypes="#//Area #//namedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GateArea" eSuperTypes="#//Area #//namedElement">
+    <eOperations name="calculateTotalGates" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eOperations name="findGateByName" eType="#//Gate">
+    	<eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  	</eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="gates" lowerBound="1" upperBound="-1"
         eType="#//Gate" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="totalGates" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" derived="true">
+    	<eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        	<details key="derivation" value="self.gates->size()" />
+    	</eAnnotations>
+	</eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ParkingArea" eSuperTypes="#//Area"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ParkingArea" eSuperTypes="#//Area #//namedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="TransportationServices" eSuperTypes="#//Area #//namedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//TransportationTypes"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="namedElement" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="namedElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
 </ecore:EPackage>

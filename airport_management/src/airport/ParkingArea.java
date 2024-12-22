@@ -13,5 +13,5 @@ package airport;
  * @model
  * @generated
  */
-public interface ParkingArea extends Area {
+public interface ParkingArea extends Area, namedElement {
 } // ParkingArea

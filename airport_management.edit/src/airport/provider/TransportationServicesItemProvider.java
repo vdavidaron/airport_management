@@ -5,8 +5,6 @@ package airport.provider;
 
 import airport.AirportPackage;
 import airport.TransportationServices;
-import airport.TransportationTypes;
-
 import java.util.Collection;
 import java.util.List;
 
@@ -46,9 +44,32 @@ public class TransportationServicesItemProvider extends AreaItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addNamePropertyDescriptor(object);
 			addTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_namedElement_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_namedElement_name_feature", "_UI_namedElement_type"),
+				 AirportPackage.Literals.NAMED_ELEMENT__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -92,8 +113,7 @@ public class TransportationServicesItemProvider extends AreaItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		TransportationTypes labelValue = ((TransportationServices)object).getType();
-		String label = labelValue == null ? null : labelValue.toString();
+		String label = ((TransportationServices)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_TransportationServices_type") :
 			getString("_UI_TransportationServices_type") + " " + label;
@@ -112,6 +132,7 @@ public class TransportationServicesItemProvider extends AreaItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(TransportationServices.class)) {
+			case AirportPackage.TRANSPORTATION_SERVICES__NAME:
 			case AirportPackage.TRANSPORTATION_SERVICES__TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

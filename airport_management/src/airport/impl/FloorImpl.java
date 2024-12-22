@@ -7,8 +7,6 @@ import airport.Floor;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Floor</b></em>'.
@@ -16,7 +14,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class FloorImpl extends MinimalEObjectImpl.Container implements Floor {
+public class FloorImpl extends namedElementImpl implements Floor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

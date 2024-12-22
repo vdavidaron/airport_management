@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Departure extends Area {
+public interface Departure extends Area, namedElement {
 	/**
 	 * Returns the value of the '<em><b>Security</b></em>' containment reference list.
 	 * The list contents are of type {@link airport.SecurityCheck}.

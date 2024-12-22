@@ -20,7 +20,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface BaggageClaim extends Area {
+public interface BaggageClaim extends Area, namedElement {
 	/**
 	 * Returns the value of the '<em><b>Belts</b></em>' containment reference list.
 	 * The list contents are of type {@link airport.Belt}.

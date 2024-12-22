@@ -4,9 +4,6 @@ package airport.tests;
 
 import airport.AirportFactory;
 import airport.Counter;
-
-import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
 
 /**
@@ -15,15 +12,7 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class CounterTest extends TestCase {
-
-	/**
-	 * The fixture for this Counter test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected Counter fixture = null;
+public class CounterTest extends namedElementTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -45,23 +34,14 @@ public class CounterTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Counter test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(Counter fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Counter test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected Counter getFixture() {
-		return fixture;
+		return (Counter)fixture;
 	}
 
 	/**

@@ -7,8 +7,6 @@ import airport.SecurityCheck;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Security Check</b></em>'.
@@ -16,7 +14,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class SecurityCheckImpl extends MinimalEObjectImpl.Container implements SecurityCheck {
+public class SecurityCheckImpl extends namedElementImpl implements SecurityCheck {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

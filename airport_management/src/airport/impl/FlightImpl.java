@@ -11,7 +11,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,11 +24,12 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link airport.impl.FlightImpl#getTime <em>Time</em>}</li>
  *   <li>{@link airport.impl.FlightImpl#getType <em>Type</em>}</li>
  *   <li>{@link airport.impl.FlightImpl#getCity <em>City</em>}</li>
+ *   <li>{@link airport.impl.FlightImpl#isIsInternational <em>Is International</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class FlightImpl extends MinimalEObjectImpl.Container implements Flight {
+public class FlightImpl extends namedElementImpl implements Flight {
 	/**
 	 * The default value of the '{@link #getFlightNumber() <em>Flight Number</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -109,6 +109,26 @@ public class FlightImpl extends MinimalEObjectImpl.Container implements Flight {
 	 * @ordered
 	 */
 	protected String city = CITY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isIsInternational() <em>Is International</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsInternational()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean IS_INTERNATIONAL_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isIsInternational() <em>Is International</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsInternational()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean isInternational = IS_INTERNATIONAL_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -227,6 +247,29 @@ public class FlightImpl extends MinimalEObjectImpl.Container implements Flight {
 	 * @generated
 	 */
 	@Override
+	public boolean isIsInternational() {
+		return isInternational;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setIsInternational(boolean newIsInternational) {
+		boolean oldIsInternational = isInternational;
+		isInternational = newIsInternational;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AirportPackage.FLIGHT__IS_INTERNATIONAL, oldIsInternational, isInternational));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case AirportPackage.FLIGHT__FLIGHT_NUMBER:
@@ -237,6 +280,8 @@ public class FlightImpl extends MinimalEObjectImpl.Container implements Flight {
 				return getType();
 			case AirportPackage.FLIGHT__CITY:
 				return getCity();
+			case AirportPackage.FLIGHT__IS_INTERNATIONAL:
+				return isIsInternational();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -260,6 +305,9 @@ public class FlightImpl extends MinimalEObjectImpl.Container implements Flight {
 				return;
 			case AirportPackage.FLIGHT__CITY:
 				setCity((String)newValue);
+				return;
+			case AirportPackage.FLIGHT__IS_INTERNATIONAL:
+				setIsInternational((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -285,6 +333,9 @@ public class FlightImpl extends MinimalEObjectImpl.Container implements Flight {
 			case AirportPackage.FLIGHT__CITY:
 				setCity(CITY_EDEFAULT);
 				return;
+			case AirportPackage.FLIGHT__IS_INTERNATIONAL:
+				setIsInternational(IS_INTERNATIONAL_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -305,6 +356,8 @@ public class FlightImpl extends MinimalEObjectImpl.Container implements Flight {
 				return type != TYPE_EDEFAULT;
 			case AirportPackage.FLIGHT__CITY:
 				return CITY_EDEFAULT == null ? city != null : !CITY_EDEFAULT.equals(city);
+			case AirportPackage.FLIGHT__IS_INTERNATIONAL:
+				return isInternational != IS_INTERNATIONAL_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -327,6 +380,8 @@ public class FlightImpl extends MinimalEObjectImpl.Container implements Flight {
 		result.append(type);
 		result.append(", city: ");
 		result.append(city);
+		result.append(", isInternational: ");
+		result.append(isInternational);
 		result.append(')');
 		return result.toString();
 	}

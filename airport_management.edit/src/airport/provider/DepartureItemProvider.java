@@ -15,7 +15,9 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
@@ -46,8 +48,31 @@ public class DepartureItemProvider extends AreaItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_namedElement_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_namedElement_name_feature", "_UI_namedElement_type"),
+				 AirportPackage.Literals.NAMED_ELEMENT__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -101,7 +126,10 @@ public class DepartureItemProvider extends AreaItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Departure_type");
+		String label = ((Departure)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Departure_type") :
+			getString("_UI_Departure_type") + " " + label;
 	}
 
 
@@ -117,6 +145,9 @@ public class DepartureItemProvider extends AreaItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Departure.class)) {
+			case AirportPackage.DEPARTURE__NAME:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 			case AirportPackage.DEPARTURE__SECURITY:
 			case AirportPackage.DEPARTURE__CHECK_IN:
 			case AirportPackage.DEPARTURE__BAGGAGE_DROP_OFF:

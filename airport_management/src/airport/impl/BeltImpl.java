@@ -12,7 +12,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,7 +26,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class BeltImpl extends MinimalEObjectImpl.Container implements Belt {
+public class BeltImpl extends namedElementImpl implements Belt {
 	/**
 	 * The cached value of the '{@link #getFlight() <em>Flight</em>}' reference.
 	 * <!-- begin-user-doc -->

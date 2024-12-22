@@ -12,7 +12,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,7 +26,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class CounterImpl extends MinimalEObjectImpl.Container implements Counter {
+public class CounterImpl extends namedElementImpl implements Counter {
 	/**
 	 * The cached value of the '{@link #getFlight() <em>Flight</em>}' reference.
 	 * <!-- begin-user-doc -->

@@ -69,6 +69,7 @@ public class AirportSwitch<T> extends Switch<T> {
 			case AirportPackage.TERMINAL: {
 				Terminal terminal = (Terminal)theEObject;
 				T result = caseTerminal(terminal);
+				if (result == null) result = casenamedElement(terminal);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -82,30 +83,35 @@ public class AirportSwitch<T> extends Switch<T> {
 			case AirportPackage.BELT: {
 				Belt belt = (Belt)theEObject;
 				T result = caseBelt(belt);
+				if (result == null) result = casenamedElement(belt);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case AirportPackage.CHECK_IN: {
 				CheckIn checkIn = (CheckIn)theEObject;
 				T result = caseCheckIn(checkIn);
+				if (result == null) result = casenamedElement(checkIn);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case AirportPackage.COMMON_AREA: {
 				CommonArea commonArea = (CommonArea)theEObject;
 				T result = caseCommonArea(commonArea);
+				if (result == null) result = casenamedElement(commonArea);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case AirportPackage.COUNTER: {
 				Counter counter = (Counter)theEObject;
 				T result = caseCounter(counter);
+				if (result == null) result = casenamedElement(counter);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case AirportPackage.CUSTOMS: {
 				Customs customs = (Customs)theEObject;
 				T result = caseCustoms(customs);
+				if (result == null) result = casenamedElement(customs);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -118,18 +124,21 @@ public class AirportSwitch<T> extends Switch<T> {
 			case AirportPackage.ELEVATOR: {
 				Elevator elevator = (Elevator)theEObject;
 				T result = caseElevator(elevator);
+				if (result == null) result = casenamedElement(elevator);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case AirportPackage.FLIGHT: {
 				Flight flight = (Flight)theEObject;
 				T result = caseFlight(flight);
+				if (result == null) result = casenamedElement(flight);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case AirportPackage.FLOOR: {
 				Floor floor = (Floor)theEObject;
 				T result = caseFloor(floor);
+				if (result == null) result = casenamedElement(floor);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -156,6 +165,7 @@ public class AirportSwitch<T> extends Switch<T> {
 			case AirportPackage.SECURITY_CHECK: {
 				SecurityCheck securityCheck = (SecurityCheck)theEObject;
 				T result = caseSecurityCheck(securityCheck);
+				if (result == null) result = casenamedElement(securityCheck);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -169,6 +179,7 @@ public class AirportSwitch<T> extends Switch<T> {
 				Arrival arrival = (Arrival)theEObject;
 				T result = caseArrival(arrival);
 				if (result == null) result = caseArea(arrival);
+				if (result == null) result = casenamedElement(arrival);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -176,6 +187,7 @@ public class AirportSwitch<T> extends Switch<T> {
 				BaggageClaim baggageClaim = (BaggageClaim)theEObject;
 				T result = caseBaggageClaim(baggageClaim);
 				if (result == null) result = caseArea(baggageClaim);
+				if (result == null) result = casenamedElement(baggageClaim);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -183,6 +195,7 @@ public class AirportSwitch<T> extends Switch<T> {
 				BaggageDropOff baggageDropOff = (BaggageDropOff)theEObject;
 				T result = caseBaggageDropOff(baggageDropOff);
 				if (result == null) result = caseArea(baggageDropOff);
+				if (result == null) result = casenamedElement(baggageDropOff);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -190,6 +203,7 @@ public class AirportSwitch<T> extends Switch<T> {
 				Departure departure = (Departure)theEObject;
 				T result = caseDeparture(departure);
 				if (result == null) result = caseArea(departure);
+				if (result == null) result = casenamedElement(departure);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -197,6 +211,7 @@ public class AirportSwitch<T> extends Switch<T> {
 				DropOff dropOff = (DropOff)theEObject;
 				T result = caseDropOff(dropOff);
 				if (result == null) result = caseArea(dropOff);
+				if (result == null) result = casenamedElement(dropOff);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -204,6 +219,7 @@ public class AirportSwitch<T> extends Switch<T> {
 				GateArea gateArea = (GateArea)theEObject;
 				T result = caseGateArea(gateArea);
 				if (result == null) result = caseArea(gateArea);
+				if (result == null) result = casenamedElement(gateArea);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -211,6 +227,7 @@ public class AirportSwitch<T> extends Switch<T> {
 				ParkingArea parkingArea = (ParkingArea)theEObject;
 				T result = caseParkingArea(parkingArea);
 				if (result == null) result = caseArea(parkingArea);
+				if (result == null) result = casenamedElement(parkingArea);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

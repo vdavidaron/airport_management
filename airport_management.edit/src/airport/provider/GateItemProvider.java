@@ -114,8 +114,10 @@ public class GateItemProvider extends namedElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		Gate gate = (Gate)object;
-		return getString("_UI_Gate_type") + " " + gate.isBoarding();
+		String label = ((Gate)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Gate_type") :
+			getString("_UI_Gate_type") + " " + label;
 	}
 
 
